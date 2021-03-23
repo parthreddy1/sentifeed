@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import SentifeedForm from "./components/SentifeedForm";
+import SentifeedResult from "./components/SentifeedResult";
+import { ResultContext } from "./context/ResultContext";
 
 function App() {
+  const [result, setResult] = useState({
+    sentiment: "",
+    feedback: "no feedback entered yet",
+  });
+
+  function handleResult(result) {
+    let newResult = { ...result };
+    setResult(newResult);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <div className="App">
+          <ResultContext.Provider value={{ result, handleResult }}>
+            <Navbar />
+            <Route exact path="/" component={SentifeedForm} />
+            <Route exact path="/result" component={SentifeedResult} />
+          </ResultContext.Provider>
+        </div>
+      </Switch>
+    </Router>
   );
 }
 

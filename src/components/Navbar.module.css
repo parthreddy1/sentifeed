@@ -1,0 +1,28 @@
+.wrapper {
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0);
+    background-color: #BAEAFE;
+    display: flex;
+    align-items: center;
+    padding: 0 100px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    margin-right: 10px;
+}
+
+.logo p {
+    font-size: 32px;
+    font-weight: 800;
+    color: #000000;
+}
+
+.logo p span {
+    font-weight: 300;
+}
