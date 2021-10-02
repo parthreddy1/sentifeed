@@ -10,7 +10,10 @@ import { ResultContext } from "../context/ResultContext";
 import backArrow from "../images/backArrow.svg";
 
 const SentifeedResult = ({ history }) => {
-  const [graph, setGraph] = useState(null);
+  const [graph, setGraph] = useState({
+    positive: 81,
+    negative: 15,
+  });
   const sentifeed = useContext(ResultContext);
 
   function handleGoBack() {
@@ -58,7 +61,7 @@ const SentifeedResult = ({ history }) => {
           </div>
           <div className={styles.individualSentiment}>
             <p>Your individual sentiment</p>
-            {sentifeed.result.sentiment === "" ? null : (
+            {/* {sentifeed.result.sentiment === "" ? null : (
               <div className={styles.sentimentDisplay}>
                 <Lottie
                   loop
@@ -80,7 +83,8 @@ const SentifeedResult = ({ history }) => {
                   {sentifeed.result.sentiment}
                 </p>
               </div>
-            )}
+            )} */}
+            
           </div>
         </div>
         <div className={styles.resultGraph}>
