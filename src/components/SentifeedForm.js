@@ -23,19 +23,24 @@ const SentimentsForm = ({ history }) => {
 
   function handleFeedbackSubmit(e) {
     e.preventDefault();
-    console.log("pressed");
-    axios
-      .post(`http://13.233.111.198:5500/test/${feedback}`)
-      .then((res) => {
-        console.log(res);
-        let data = {
-          sentiment: res.data.ModelResponse,
-          feedback: feedback,
-        };
-        sentifeed.handleResult(data);
-        history.push("/result");
-      })
-      .catch((err) => console.log(err));
+    // axios
+    //   .post(`http://13.233.111.198:5500/test/${feedback}`)
+    //   .then((res) => {
+    //     console.log(res);
+    //     let data = {
+    //       sentiment: res.data.ModelResponse,
+    //       feedback: feedback,
+    //     };
+    //     sentifeed.handleResult(data);
+    //     history.push("/result");
+    //   })
+    //   .catch((err) => console.log(err));
+    let data = {
+            sentiment: "positive",
+            feedback: "positivei",
+          };
+    sentifeed.handleResult(data);
+    history.push("/result");
   }
 
   return (
