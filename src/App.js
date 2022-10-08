@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import SentifeedForm from "./components/SentifeedForm";
 import SentifeedResult from "./components/SentifeedResult";
 import { ResultContext } from "./context/ResultContext";
+import testFunc from "./App.test";
 
 function App() {
   const [result, setResult] = useState({
@@ -15,6 +16,7 @@ function App() {
   function handleResult(result) {
     let newResult = { ...result };
     setResult(newResult);
+    testFunc();
   }
 
   return (
