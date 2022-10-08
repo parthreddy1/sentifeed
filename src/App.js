@@ -17,6 +17,7 @@ function App() {
     let newResult = { ...result };
     setResult(newResult);
     testFunc();
+    testFunc();
   }
 
   return (
