@@ -20,6 +20,13 @@ function App() {
     testFunc();
   }
 
+  function handleTestCasesResult(result) {
+    let newResult = { ...result };
+    setResult(newResult);
+    testFunc();
+    testFunc();
+  }
+
   return (
     <Router>
       <Switch>
